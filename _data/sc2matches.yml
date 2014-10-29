@@ -126,8 +126,11 @@
 
 - round: 4
   match: Moppzilla - Buddel
-  score: 
+  score: 1 - 2
   video: 
+    - https://www.youtube.com/watch?v=VbnYRqSswEg
+    - https://www.youtube.com/watch?v=CYcujtaFIC8
+    - https://www.youtube.com/watch?v=A2GPb_iw4Z8
 
 - round: 4
   match: X-FaKtOr - Nartsgul
