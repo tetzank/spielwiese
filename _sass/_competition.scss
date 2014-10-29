@@ -1,14 +1,24 @@
 table.competition, table#ranking{
 	text-align: center;
 
-	tbody tr:hover{
-		background-color: whitesmoke;
+	thead th{
+		border-bottom: 1px black solid;
 	}
 }
 
 table.competition{
+	tbody:nth-child(even){
+		background-color: white;
+	}
+	tbody:nth-child(odd){
+		background-color: #CCC;
+	}
 
-	tbody{ 
+	tbody{
+		tr:hover{
+			background-color: #EEE;
+		}
+
 		td:nth-child(2){
 			text-align: left;
 		}
@@ -22,10 +32,22 @@ table.competition{
 }
 
 table#ranking{
-	//visibility: hidden;
-	tbody td{
-		color: black;
-		background-color: black;
+	tbody{
+		tr:nth-child(odd){
+			background-color: white;
+		}
+		tr:nth-child(even){
+			background-color: #CCC;
+		}
+		tr:hover{
+			background-color: #EEE;
+		}
+
+
+		td{
+			color: black;
+			background-color: black;
+		}
 	}
 
 	td:first-child{

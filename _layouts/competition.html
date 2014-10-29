@@ -22,7 +22,13 @@ layout: post
 		</tr>
 	</thead>
 	<tbody>
+{% assign round = site.data[page.matchdata][0].round %}
 {% for m in site.data[page.matchdata] %}
+	{% if round != m.round %}
+	{% assign round = m.round %}
+	</tbody>
+	<tbody>
+	{% endif %}
 		<tr>
 			<td>{{ m.round }}</td>
 			<td>{{ m.match }}</td>
