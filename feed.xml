@@ -4,10 +4,10 @@
     <title>Spielwiese</title>
     <description>Spielwiese
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 29 Oct 2014 11:51:00 +0100</pubDate>
-    <lastBuildDate>Wed, 29 Oct 2014 11:51:00 +0100</lastBuildDate>
+    <link>http://tetzank.github.io/spielwiese//</link>
+    <atom:link href="http://tetzank.github.io/spielwiese//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 29 Oct 2014 12:00:05 +0100</pubDate>
+    <lastBuildDate>Wed, 29 Oct 2014 12:00:05 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -27,8 +27,8 @@ Kommentatoren.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 27 Oct 2014 00:00:00 +0100</pubDate>
-        <link>http://yourdomain.com/2014/10/27/sc2-4-Turnier.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/10/27/sc2-4-Turnier.html</guid>
+        <link>http://tetzank.github.io/spielwiese//2014/10/27/sc2-4-Turnier.html</link>
+        <guid isPermaLink="true">http://tetzank.github.io/spielwiese//2014/10/27/sc2-4-Turnier.html</guid>
         
         
       </item>
