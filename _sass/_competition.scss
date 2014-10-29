@@ -1,0 +1,34 @@
+table.competition, table#ranking{
+	text-align: center;
+
+	tbody tr:hover{
+		background-color: whitesmoke;
+	}
+}
+
+table.competition{
+
+	tbody{ 
+		td:nth-child(2){
+			text-align: left;
+		}
+
+		/*tbody>tr>td:nth-child(3){*/
+		td.score{
+			color: black;
+			background-color: black;
+		}
+	}
+}
+
+table#ranking{
+	//visibility: hidden;
+	tbody td{
+		color: black;
+		background-color: black;
+	}
+
+	td:first-child{
+		text-align: left;
+	}
+}

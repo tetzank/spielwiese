@@ -1,0 +1,19 @@
+---
+layout: competition
+title: Starcraft 2 - 4. Turnier
+matchdata: sc2matches
+---
+
+![Logo](https://dl.dropboxusercontent.com/u/18678802/pub/sc2_hots_turnier.png "Logo")
+
+Dies ist nur ein sinnloser Platzhaltertext, weil mir nichts sinnvolles
+eingefallen ist und ich keine Lust hatte den Forumeintrag von Fersoltil zu
+kopieren. Wer es noch nicht wusste: Das ist bloß eine Testseite. Das
+interessante ist sowieso nicht mein Blabla, sondern die Spieleliste unten
+drunter.
+
+Also viel Spaß beim gucken und vielen Dank an die Organisatoren, Spieler und
+Kommentatoren.
+
+[Thread](http://forum.mods.de/bb/thread.php?TID=213030)
+

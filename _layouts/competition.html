@@ -1,0 +1,61 @@
+---
+layout: post
+---
+{{ content }}
+
+<hr/>
+<div id="player"></div>
+
+<p>
+	<label>Filter:<input id="filter" type="search" /></label>
+	<label><input id="unhide" type="checkbox" />show all scores</label>
+	<label><input id="unhide_ranking" type="checkbox"/>show ranking</label>
+</p>
+
+<table class="competition">
+	<thead>
+		<tr>
+			<th>Round</th>
+			<th>Matchup</th>
+			<th>Score</th>
+			<th>Video</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for m in site.data[page.matchdata] %}
+		<tr>
+			<td>{{ m.round }}</td>
+			<td>{{ m.match }}</td>
+			<td{% if m.score.size > 0 %} class="score">{{ m.score }}{% else %}>{% endif %}</td>
+			<td>{% if m.video.size > 0 %}{{m.video | gen_vid_link}}{% endif %}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+
+<table id="ranking">
+	<thead>
+		<tr>
+			<th>Player</th>
+			<th>Played</th>
+			<th>Wins</th>
+			<th>Losses</th>
+			<th>For</th>
+			<th>Against</th>
+			<th>Points</th>
+		</tr>
+	</thead>
+	<tbody>
+{% assign ranking = site.data[page.matchdata] | gen_ranking %}
+{% for row in ranking %}
+		<tr>
+			{% for entry in row %}<td>{{entry}}</td>
+			{% endfor %}
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+
+<a href="#player">Up</a>
+
+<script type="application/ecmascript" src="/js/competition.js"></script>

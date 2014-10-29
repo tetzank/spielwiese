@@ -1,0 +1,16 @@
+# Site settings
+title: Spielwiese
+email: a@b.de
+description: > # this means to ignore newlines until "baseurl:"
+  Spielwiese
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+github_username:  tetzank
+
+exclude: [tools]
+
+# Build settings
+markdown: kramdown
+
+sass:
+  style: :compress
