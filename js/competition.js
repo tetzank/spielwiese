@@ -117,3 +117,24 @@ document.getElementById('unhide_ranking').addEventListener('click', function(evt
 		document.getElementById('ranking').scrollIntoView(true);
 	}
 }, false);
+
+var scrolling = false;
+var hr = document.getElementById('border');
+window.onscroll = function(evt){
+	if(ytiframe){
+		if(scrolling){
+			if(border.getBoundingClientRect().top > 0){
+				ytiframe.className = "";
+				ytiframe.style.left = "0";
+				scrolling = false;
+			}
+		}else{
+			var rect = ytiframe.getBoundingClientRect();
+			if(rect.top < 0){
+				ytiframe.className = "fixed";
+				ytiframe.style.left = rect.left+"px";
+				scrolling = true;
+			}
+		}
+	}
+}
