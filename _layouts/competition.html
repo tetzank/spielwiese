@@ -1,11 +1,14 @@
 ---
 layout: post
 ---
+<div id="text">
 {{ content }}
+</div>
 
-<hr/>
+<hr id="border"/>
 <div id="player"></div>
 
+<div id="tables">
 <p>
 	<label>Filter:<input id="filter" type="search" /></label>
 	<label><input id="unhide" type="checkbox" />show all scores</label>
@@ -63,6 +66,7 @@ layout: post
 </table>
 
 <a href="#player">Up</a>
+</div>
 
 <script type="application/ecmascript"
 	src="{{ "/js/competition.js" | prepend: site.baseurl }}"></script>
