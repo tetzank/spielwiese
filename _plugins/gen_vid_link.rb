@@ -18,7 +18,7 @@ module Jekyll
 				end
 			else
 				if input.include? "twitch"
-					return "<a href=\"#{input}\" target=\"_blank\">Twitch</a>"
+					return "<a href=\"#{input}\" target=\"_blank\" onclick=\"markVideo(event);\">Twitch</a>"
 				elsif input.include? "lpip"
 					return "see LPIP"
 				end
