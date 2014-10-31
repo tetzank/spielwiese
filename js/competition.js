@@ -17,10 +17,10 @@ function markVideo(event){
 		w[0].classList.remove('watching');
 	}
 	var cl = event.target.parentElement.classList;
+	cl.add("watching");
 	if(!cl.contains("visited")){
 		// mark as visited
 		cl.add("visited");
-		cl.add("watching");
 		// get position in table
 		var pos = 0;
 		var n = event.target.parentElement.parentElement; // a -> td -> tr
