@@ -3,6 +3,7 @@
 module Jekyll
 	module GenRankingFilter
 		Entry = Struct.new(:played, :wins, :losses, :for, :against, :points)
+		# point - every map won +1, and every match one +1
 
 		def gen_ranking(input)
 			ranking = Hash.new
@@ -18,19 +19,21 @@ module Jekyll
 						ranking[op[1]] = Entry.new(0, 0, 0, 0, 0, 0)
 					end
 					if score[0] > score[1]
-						ranking[op[0]].points += 3
+						ranking[op[0]].points += 1
 						ranking[op[0]].wins += 1
 						ranking[op[1]].losses += 1
 					else
-						ranking[op[1]].points += 3
+						ranking[op[1]].points += 1
 						ranking[op[1]].wins += 1
 						ranking[op[0]].losses += 1
 					end
 					ranking[op[0]].played += 1
 					ranking[op[1]].played += 1
 					ranking[op[0]].for += score[0].to_i
+					ranking[op[0]].points += score[0].to_i
 					ranking[op[0]].against += score[1].to_i
 					ranking[op[1]].for += score[1].to_i
+					ranking[op[1]].points += score[1].to_i
 					ranking[op[1]].against += score[0].to_i
 				end
 			end
