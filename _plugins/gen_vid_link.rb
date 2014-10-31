@@ -12,16 +12,13 @@ module Jekyll
 							vid += ", '#{v[/youtube.com\/watch\?v=(\w+)/,1]}'"
 						end
 					end
-					return "<a href=\"\#player\" onclick=\"embedYTVideo([#{vid}]);\">Youtube</a>"
+					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vid}]);\">Youtube</a>"
 				else
 					return "error: only youtube arrays supported for now"
 				end
 			else
 				if input.include? "twitch"
 					return "<a href=\"#{input}\" target=\"_blank\">Twitch</a>"
-					#channel = input[/twitch.tv\/(\w+)\//,1]
-					#chapter = input[/twitch.tv\/(\w+)\/c\/(\d+)/,2]
-					#return "<a href=\"\#player\" onclick=\"embedTwitch('#{channel}', '#{chapter}');\">Twitch</a>"
 				elsif input.include? "lpip"
 					return "see LPIP"
 				end

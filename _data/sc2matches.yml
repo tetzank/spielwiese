@@ -59,7 +59,7 @@
 - round: 2
   match: Moppzilla - Randbauer
   score: 2 - 1
-  video: 
+  video: http://www.twitch.tv/skunkkk/b/578777309
 
 - round: 2
   match: X-FaKtOr - Keyan_Farlander
@@ -69,7 +69,7 @@
 - round: 2
   match: Jackle - Cru$her
   score: 0 - 2
-  video: 
+  video: http://www.twitch.tv/skunkkk/b/577496959
 
 - round: 3
   match: KarlKoch - JochenPeter
@@ -149,8 +149,9 @@
 
 - round: 4
   match: Keyan_Farlander - Randbauer
-  score: 
-  video: 
+  score: 1 - 2
+  video:
+    - https://www.youtube.com/watch?v=iJmShAP80PE
 
 - round: 5
   match: KarlKoch - Suizidfisch
