@@ -97,8 +97,11 @@
 
 - round: 3
   match: Cru$her - Nartsgul
-  score: 
-  video: 
+  score: 2 - 1
+  video:
+    - https://www.youtube.com/watch?v=edwKiQf89O4
+    - https://www.youtube.com/watch?v=rOzLBJqByjY
+    - https://www.youtube.com/watch?v=PXV24tb0N8I
 
 - round: 3
   match: Keyan_Farlander - Suizidfisch
@@ -139,8 +142,10 @@
 
 - round: 4
   match: Jackle - Suizidfisch
-  score: 
-  video: 
+  score: 2 - 0
+  video:
+    - https://www.youtube.com/watch?v=WdKA2lTwRNs
+    - https://www.youtube.com/watch?v=ZfUVctycj18
 
 - round: 4
   match: Cru$her - seph`

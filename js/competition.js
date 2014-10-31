@@ -16,9 +16,15 @@ var playerdiv = document.getElementById('player');
 var ytiframe = null;
 var player = null;
 function embedYTVideo(event, arr){
-	if(event.target.parentElement.className != "visited"){
+	var w = document.getElementsByClassName('watching');
+	if(w.length > 0){
+		w[0].classList.remove('watching');
+	}
+	var cl = event.target.parentElement.classList;
+	if(!cl.contains("visited")){
 		// mark as visited
-		event.target.parentElement.className = "visited";
+		cl.add("visited");
+		cl.add("watching");
 		// get position in table
 		var pos = 0;
 		var n = event.target.parentElement.parentElement; // a -> td -> tr
