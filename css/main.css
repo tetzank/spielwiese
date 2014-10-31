@@ -325,6 +325,9 @@ pre > code {
 .visited a {
   color: purple; }
 
+.watching {
+  background-color: lightgreen; }
+
 table.competition, table#ranking {
   text-align: center; }
 table.competition thead th, table#ranking thead th {

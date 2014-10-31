@@ -11,14 +11,16 @@ if(vl != null){
 	}
 }
 
-
-var playerdiv = document.getElementById('player');
-var ytiframe = null;
-var player = null;
-function embedYTVideo(event, arr){
-	if(event.target.parentElement.className != "visited"){
+function markVideo(event){
+	var w = document.getElementsByClassName('watching');
+	if(w.length > 0){
+		w[0].classList.remove('watching');
+	}
+	var cl = event.target.parentElement.classList;
+	cl.add("watching");
+	if(!cl.contains("visited")){
 		// mark as visited
-		event.target.parentElement.className = "visited";
+		cl.add("visited");
 		// get position in table
 		var pos = 0;
 		var n = event.target.parentElement.parentElement; // a -> td -> tr
@@ -35,6 +37,13 @@ function embedYTVideo(event, arr){
 		visitedLinks |= 1 << pos;
 		localStorage.setItem('visitedLinks', visitedLinks.toString(16));
 	}
+}
+
+var playerdiv = document.getElementById('player');
+var ytiframe = null;
+var player = null;
+function embedYTVideo(event, arr){
+	markVideo(event);
 
 	if(player == null){
 		var url = 'https://www.youtube.com/embed/' + arr[0]
