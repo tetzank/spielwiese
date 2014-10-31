@@ -322,6 +322,9 @@ pre > code {
 
   #tables {
     float: left; } }
+.visited a {
+  color: purple; }
+
 table.competition, table#ranking {
   text-align: center; }
 table.competition thead th, table#ranking thead th {

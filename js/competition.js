@@ -1,7 +1,41 @@
+// restore data from localStorage
+var visitedLinks = 0;
+var vl = localStorage.getItem('visitedLinks');
+if(vl != null){
+	visitedLinks = parseInt(vl, 16);
+	var vidlinks = document.querySelectorAll('table.competition>tbody>tr>td:last-child');
+	for(var i=0; i<vidlinks.length; ++i){
+		if(visitedLinks & (1 << i)){
+			vidlinks[i].className = "visited";
+		}
+	}
+}
+
+
 var playerdiv = document.getElementById('player');
 var ytiframe = null;
 var player = null;
-function embedYTVideo(arr){
+function embedYTVideo(event, arr){
+	if(event.target.parentElement.className != "visited"){
+		// mark as visited
+		event.target.parentElement.className = "visited";
+		// get position in table
+		var pos = 0;
+		var n = event.target.parentElement.parentElement; // a -> td -> tr
+		while(n.previousElementSibling){
+			++pos;
+			n = n.previousElementSibling;
+		}
+		n = n.parentElement.previousElementSibling; // tr -> tbody -> tbody or thead
+		while(n.previousElementSibling){
+			pos += n.childElementCount;
+			n = n.previousElementSibling;
+		}
+		// save in localStorage
+		visitedLinks |= 1 << pos;
+		localStorage.setItem('visitedLinks', visitedLinks.toString(16));
+	}
+
 	if(player == null){
 		var url = 'https://www.youtube.com/embed/' + arr[0]
 				+ '?showinfo=0&amp;version=3&amp;enablejsapi=1&amp;playerapiid=ytplayer';
@@ -15,73 +49,35 @@ function embedYTVideo(arr){
 		var playerAPI = document.createElement('script');
 		playerAPI.setAttribute('src', 'https://www.youtube.com/player_api');
 
-		ytiframe = document.createElement('iframe');
-		ytiframe.setAttribute('id', 'ytplayer');
-		ytiframe.setAttribute('type', 'text/html');
-		ytiframe.setAttribute('width', '640');
-		ytiframe.setAttribute('height', '390');
-		ytiframe.setAttribute('allowfullscreen', 'true');
-		ytiframe.setAttribute('src', url);
+		playerAPI.onload = function(){
+			ytiframe = document.createElement('iframe');
+			ytiframe.setAttribute('id', 'ytplayer');
+			ytiframe.setAttribute('type', 'text/html');
+			ytiframe.setAttribute('width', '640');
+			ytiframe.setAttribute('height', '390');
+			ytiframe.setAttribute('allowfullscreen', 'true');
+			ytiframe.setAttribute('src', url);
 
-		ytiframe.onload = function(){
-			player = new YT.Player('ytplayer', {
-			  events: {
-				'onReady': onPlayerReady,
-			  }
-			});
+			ytiframe.onload = function(){
+				player = new YT.Player('ytplayer', {
+				  events: {
+					'onReady': onPlayerReady,
+				  }
+				});
+			}
+			
+			playerdiv.appendChild(ytiframe);
 		}
-		
-		//var placeholder = document.getElementById('player');
-		//var article = document.querySelector('article.post-content');
-		//article.insertBefore(playerAPI, placeholder);
-		//article.insertBefore(iframe, placeholder);
-		//article.removeChild(placeholder);
 		playerdiv.appendChild(playerAPI);
-		playerdiv.appendChild(ytiframe);
 	}else{
 		//show player as it could be hidden 'cause of twitch
 		ytiframe.style.display = "block";
 		//player already loaded, just load videos
 		player.loadPlaylist(arr);
 	}
-	//TODO: not sure how to handle twitch, maybe just hide yt player
 }
 function onPlayerReady(evt) {
 	player.playVideo();
-}
-
-var obj = null;
-function embedTwitch(channel, chapter){ //FIXME: doesn't load the right file
-	if(obj != null){
-		playerdiv.removeChild(obj);
-	}
-	if(ytiframe != null){
-		ytiframe.style.display = "none";
-	}
-
-	obj = document.createElement('object');
-	obj.setAttribute('id', 'twplayer');
-	obj.setAttribute('type', 'application/x-shockwave-flash');
-	obj.setAttribute('width', '620');
-	obj.setAttribute('height', '378');
-	obj.setAttribute('data', 'http://www.twitch.tv/widgets/archive_embed_player.swf');
-
-	var param = document.createElement('param');
-	param.setAttribute('name', 'movie');
-	param.setAttribute('value','http://www.twitch.tv/widgets/archive_embed_player.swf');
-	obj.appendChild(param);
-
-	param = document.createElement('param');
-	param.setAttribute('name', 'allowFullScreen');
-	param.setAttribute('value','true');
-	obj.appendChild(param);
-
-	param = document.createElement('param');
-	param.setAttribute('name', 'flashvars');
-	param.setAttribute('value','channel='+channel+'&amp;chapter_id='+chapter+'&amp;auto_play=false');
-	obj.appendChild(param);
-
-	playerdiv.appendChild(obj);
 }
 
 var elements = document.querySelectorAll('table.competition>tbody>tr>td:nth-child(2)');
@@ -138,3 +134,4 @@ window.onscroll = function(evt){
 		}
 	}
 }
+
