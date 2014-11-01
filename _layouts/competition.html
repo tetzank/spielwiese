@@ -58,14 +58,15 @@ layout: post
 {% assign ranking = site.data[page.matchdata] | gen_ranking %}
 {% for row in ranking %}
 		<tr>
-			{% for entry in row %}<td>{{entry}}</td>
+			<td><a href="#border" onclick="showGames('{{row[0]}}');">{{row[0]}}</a></td>
+			{% for entry in row offset:1 %}<td>{{entry}}</td>
 			{% endfor %}
 		</tr>
 {% endfor %}
 	</tbody>
 </table>
 
-<a href="#player">Up</a>
+<a href="#border">Up</a>
 </div>
 
 <script type="application/ecmascript"

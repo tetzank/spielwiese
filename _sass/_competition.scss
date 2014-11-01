@@ -63,6 +63,14 @@ table.competition{
 	}
 }
 
+table.visible td{
+	background-color: inherit !important;
+
+	a{
+		color: $brand-color !important;
+	}
+}
+
 table#ranking{
 	tbody{
 		tr:nth-child(odd){
@@ -79,6 +87,10 @@ table#ranking{
 		td{
 			color: black;
 			background-color: black;
+
+			a{
+				color: black;
+			}
 		}
 	}
 
