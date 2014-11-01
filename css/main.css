@@ -347,6 +347,11 @@ table.competition tbody td.score {
   color: black;
   background-color: black; }
 
+table.visible td {
+  background-color: inherit !important; }
+table.visible td a {
+  color: #2a7ae2 !important; }
+
 table#ranking tbody tr:nth-child(odd) {
   background-color: white; }
 table#ranking tbody tr:nth-child(even) {
@@ -356,5 +361,7 @@ table#ranking tbody tr:hover {
 table#ranking tbody td {
   color: black;
   background-color: black; }
+table#ranking tbody td a {
+  color: black; }
 table#ranking td:first-child {
   text-align: left; }

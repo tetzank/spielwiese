@@ -128,7 +128,10 @@ function onPlayerReady(evt) {
 
 var elements = document.querySelectorAll('table.competition>tbody>tr>td:nth-child(2)');
 document.getElementById('filter').addEventListener('input', function(evt){
-	var needle = evt.target.value.toLowerCase();
+	filterInput(evt.target.value);
+}, false);
+function filterInput(str){
+	var needle = str.toLowerCase();
 	for(var i=0; i<elements.length; ++i){
 		var ele = elements[i];
 		if(ele.innerHTML.toLowerCase().indexOf(needle) == -1){
@@ -141,7 +144,7 @@ document.getElementById('filter').addEventListener('input', function(evt){
 			ele.parentNode.style.display = "table-row";
 		}
 	}
-}, false);
+}
 
 var scores = document.querySelectorAll('table.competition td.score');
 document.getElementById('unhide').addEventListener('click', function(evt){
@@ -150,11 +153,9 @@ document.getElementById('unhide').addEventListener('click', function(evt){
 	}
 }, false);
 
-var ranking = document.querySelectorAll('table#ranking tbody td');
+var ranking = document.getElementById('ranking');
 document.getElementById('unhide_ranking').addEventListener('click', function(evt){
-	for(var i=0; i<ranking.length; ++i){
-		ranking[i].style.backgroundColor = evt.target.checked? 'inherit': 'black';
-	}
+	ranking.classList.toggle('visible', evt.target.checked);
 	if(evt.target.checked){
 		document.getElementById('ranking').scrollIntoView(true);
 	}
@@ -181,3 +182,8 @@ window.onscroll = function(evt){
 	}
 }
 
+var filter = document.getElementById('filter');
+function showGames(player){
+	filter.value = player;
+	filterInput(player);
+}
