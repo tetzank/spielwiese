@@ -1,11 +1,48 @@
+// big bitfield
+function BitField32(nSize){
+    var nNumbers = Math.ceil(nSize/32) | 0;
+    this.values = new Uint32Array(nNumbers);
+}
+BitField32.prototype.get = function(i){
+	// | 0 - converts to int, all bitwise ops work on int32
+    var index = (i / 32) | 0; 
+    var bit = i % 32;
+    return (this.values[index] & (1 << bit)) !== 0;
+};
+BitField32.prototype.set = function(i){
+    var index = (i / 32) | 0;
+    var bit = i % 32;
+    this.values[index] |= 1 << bit;
+};
+BitField32.prototype.unset = function(i){
+    var index = (i / 32) | 0;
+    var bit = i % 32;
+    this.values[index] &= ~(1 << bit);
+};
+BitField32.prototype.toString = function(){
+	var str = this.values[0].toString(16);
+	for(var i=1; i<this.values.length; ++i){
+		str += ";"+ this.values[i].toString(16);
+	}
+	return str;
+};
+BitField32.prototype.fromString = function(str){
+	var arr = str.split(";");
+	for(var i=0; i<arr.length && i<this.values.length; ++i){
+		this.values[i] = parseInt(arr[i], 16);
+	}
+};
+
+
 // restore data from localStorage
-var visitedLinks = 0;
+var vidlinks = document.querySelectorAll('table.competition>tbody>tr>td:last-child');
+// visitedLinks is partitioned in 32 bit chunks to prevent overflows
+var visitedLinks = new BitField32(vidlinks.length);
 var vl = localStorage.getItem('visitedLinks');
-if(vl != null){
-	visitedLinks = parseInt(vl, 16);
-	var vidlinks = document.querySelectorAll('table.competition>tbody>tr>td:last-child');
+if(vl !== null){
+	visitedLinks.fromString(vl);
 	for(var i=0; i<vidlinks.length; ++i){
-		if(visitedLinks & (1 << i)){
+		if(visitedLinks.get(i)){
 			vidlinks[i].className = "visited";
 		}
 	}
@@ -34,8 +71,8 @@ function markVideo(event){
 			n = n.previousElementSibling;
 		}
 		// save in localStorage
-		visitedLinks |= 1 << pos;
-		localStorage.setItem('visitedLinks', visitedLinks.toString(16));
+		visitedLinks.set(pos);
+		localStorage.setItem('visitedLinks', visitedLinks.toString());
 	}
 }
 
@@ -129,15 +166,15 @@ window.onscroll = function(evt){
 	if(ytiframe){
 		if(scrolling){
 			if(border.getBoundingClientRect().top > 0){
-				ytiframe.className = "";
-				ytiframe.style.left = "0";
+				playerdiv.className = "";
+				playerdiv.style.left = "0";
 				scrolling = false;
 			}
 		}else{
-			var rect = ytiframe.getBoundingClientRect();
+			var rect = playerdiv.getBoundingClientRect();
 			if(rect.top < 0){
-				ytiframe.className = "fixed";
-				ytiframe.style.left = rect.left+"px";
+				playerdiv.className = "fixed";
+				playerdiv.style.left = rect.left+"px";
 				scrolling = true;
 			}
 		}
