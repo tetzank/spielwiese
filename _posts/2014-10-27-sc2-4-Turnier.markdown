@@ -1,7 +1,10 @@
 ---
 layout: competition
 title: Starcraft 2 - 4. Turnier
+
 matchdata: sc2matches
+matchPoints: 1
+mapPoints: 1
 ---
 
 ![Logo](https://dl.dropboxusercontent.com/u/18678802/pub/sc2_hots_turnier.png "Logo")
