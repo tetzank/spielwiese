@@ -6,10 +6,10 @@ module Jekyll
 			if input.is_a? Array
 				vid = ""
 				if input[0].include? "youtube"
-					vid = "'#{input[0][/youtube.com\/watch\?v=(\w+)/,1]}'"
+					vid = "'#{input[0][/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
 					for v in input[1..-1]
 						if v.include? "youtube"
-							vid += ", '#{v[/youtube.com\/watch\?v=(\w+)/,1]}'"
+							vid += ", '#{v[/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
 						end
 					end
 					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vid}]);\">Youtube</a>"

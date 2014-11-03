@@ -149,8 +149,11 @@
 
 - round: 4
   match: Cru$her - seph`
-  score: 
-  video: 
+  score: 1 - 2
+  video:
+    - https://www.youtube.com/watch?v=C1KwDDBAVbY
+    - https://www.youtube.com/watch?v=xtpgtqpICno
+    - https://www.youtube.com/watch?v=-qUqKWgXXkI
 
 - round: 4
   match: Keyan_Farlander - Randbauer
