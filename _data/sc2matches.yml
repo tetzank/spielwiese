@@ -163,8 +163,11 @@
 
 - round: 5
   match: KarlKoch - Suizidfisch
-  score: 
-  video: 
+  score: 2 - 1
+  video:
+    - https://www.youtube.com/watch?v=rsRaQ1RNqRc
+    - https://www.youtube.com/watch?v=bQ-h2g5jBcI
+    - https://www.youtube.com/watch?v=jrgFOuWhtz8
 
 - round: 5
   match: Nartsgul - seph`
@@ -193,8 +196,10 @@
 
 - round: 5
   match: Moppzilla - X-FaKtOr
-  score: 
-  video: 
+  score: 2 - 0
+  video:
+    - https://www.youtube.com/watch?v=0XLPtLt9XEw
+    - https://www.youtube.com/watch?v=Y9xSfeZGtcU
 
 - round: 6
   match: KarlKoch - Moppzilla
