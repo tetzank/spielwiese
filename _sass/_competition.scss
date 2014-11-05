@@ -55,15 +55,18 @@ table.competition{
 			text-align: left;
 		}
 
-		/*tbody>tr>td:nth-child(3){*/
 		td.score{
 			color: black;
 			background-color: black;
 		}
+		td.score:hover{
+			background-color: inherit;
+			transition: background-color 2s;
+		}
 	}
 }
 
-table.visible td{
+table.visible td, td.visible{
 	background-color: inherit !important;
 
 	a{

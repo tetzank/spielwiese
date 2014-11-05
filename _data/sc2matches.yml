@@ -118,7 +118,8 @@
 - round: 4
   match: KarlKoch - MegaSpucknapf
   score: 2 - 0
-  video: http://www.twitch.tv/suizidfisch/b/582843001
+  video:
+    - https://www.youtube.com/watch?v=A04Ou1en5vI
 
 - round: 4
   match: JochenPeter - SkunkyVillage
