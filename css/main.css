@@ -337,8 +337,6 @@ table.competition tbody:nth-child(even) {
   background-color: white; }
 table.competition tbody:nth-child(odd) {
   background-color: #CCC; }
-table.competition tbody {
-  /*tbody>tr>td:nth-child(3){*/ }
 table.competition tbody tr:hover {
   background-color: #EEE; }
 table.competition tbody td:nth-child(2) {
@@ -346,10 +344,13 @@ table.competition tbody td:nth-child(2) {
 table.competition tbody td.score {
   color: black;
   background-color: black; }
+table.competition tbody td.score:hover {
+  background-color: inherit;
+  transition: background-color 2s; }
 
-table.visible td {
+table.visible td, td.visible {
   background-color: inherit !important; }
-table.visible td a {
+table.visible td a, td.visible a {
   color: #2a7ae2 !important; }
 
 table#ranking tbody tr:nth-child(odd) {

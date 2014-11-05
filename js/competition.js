@@ -116,8 +116,6 @@ function embedYTVideo(event, arr){
 		}
 		playerdiv.appendChild(playerAPI);
 	}else{
-		//show player as it could be hidden 'cause of twitch
-		ytiframe.style.display = "block";
 		//player already loaded, just load videos
 		player.loadPlaylist(arr);
 	}
@@ -149,7 +147,7 @@ function filterInput(str){
 var scores = document.querySelectorAll('table.competition td.score');
 document.getElementById('unhide').addEventListener('click', function(evt){
 	for(var i=0; i<scores.length; ++i){
-		scores[i].style.backgroundColor = evt.target.checked? 'inherit': 'black';
+		scores[i].classList.toggle('visible', evt.target.checked);
 	}
 }, false);
 
