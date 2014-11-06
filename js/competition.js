@@ -157,6 +157,11 @@ document.getElementById('unhide_ranking').addEventListener('click', function(evt
 	if(evt.target.checked){
 		document.getElementById('ranking').scrollIntoView(true);
 	}
+	document.getElementById('unhide_ranking2').checked = evt.target.checked;
+}, false);
+document.getElementById('unhide_ranking2').addEventListener('click', function(evt){
+	ranking.classList.toggle('visible', evt.target.checked);
+	document.getElementById('unhide_ranking').checked = evt.target.checked;
 }, false);
 
 var scrolling = false;
