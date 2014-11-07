@@ -66,38 +66,38 @@ table.competition{
 	}
 }
 
-table.visible td, td.visible{
+td.visible{
 	background-color: inherit !important;
+}
 
-	a{
-		color: $brand-color !important;
+table#ranking.visible tbody{
+	tr:nth-child(odd){
+		background-color: white;
+	}
+	tr:nth-child(even){
+		background-color: #CCC;
+	}
+	tr:hover{
+		background-color: #EEE;
+		transition: background-color 0s;
 	}
 }
 
 table#ranking{
 	tbody{
-		tr:nth-child(odd){
-			background-color: white;
-		}
-		tr:nth-child(even){
-			background-color: #CCC;
+		tr{
+			background-color: black;
+			color: black;
+
+			a{ color: black; }
 		}
 		tr:hover{
-			background-color: #EEE;
+			background-color: inherit;
+			transition: background-color 2s;
 		}
 
-
-		td{
-			color: black;
-			background-color: black;
-
-			a{
-				color: black;
-			}
+		td:first-child{
+			text-align: left;
 		}
-	}
-
-	td:first-child{
-		text-align: left;
 	}
 }
