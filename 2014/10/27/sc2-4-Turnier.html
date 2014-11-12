@@ -80,7 +80,7 @@ Kommentatoren.</p>
 
 <div id="tables">
 <p>
-	<label>Filter:<input id="filter" type="search" /></label>
+	<label>Filter:<input id="filter" type="search" placeholder="round or player" /></label>
 	<label><input id="unhide" type="checkbox" />show all scores</label>
 	<label><input id="unhide_ranking" type="checkbox"/>show ranking</label>
 </p>
@@ -365,8 +365,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>5</td>
 			<td>SkunkyVillage - Keyan_Farlander</td>
-			<td></td>
-			<td></td>
+			<td class="score">2 - 0</td>
+			<td><a href="http://www.twitch.tv/crusher87/c/5452582" target="_blank" onclick="markVideo(event);">Twitch</a></td>
 		</tr>
 
 	
@@ -381,8 +381,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>5</td>
 			<td>JochenPeter - Jackle</td>
-			<td></td>
-			<td></td>
+			<td class="score">0 - 2</td>
+			<td><a href="http://www.twitch.tv/crusher87/c/5465558" target="_blank" onclick="markVideo(event);">Twitch</a></td>
 		</tr>
 
 	
@@ -401,8 +401,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>6</td>
 			<td>KarlKoch - Moppzilla</td>
-			<td></td>
-			<td></td>
+			<td class="score">2 - 0</td>
+			<td><a href="http://www.twitch.tv/skunkkk/b/587737143" target="_blank" onclick="markVideo(event);">Twitch</a></td>
 		</tr>
 
 	
@@ -425,8 +425,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>6</td>
 			<td>Cru$her - SkunkyVillage</td>
-			<td></td>
-			<td></td>
+			<td class="score">0 - 2</td>
+			<td><a href="#player" onclick="embedYTVideo(event,['ohaqSlT_fA4']);">Youtube</a></td>
 		</tr>
 
 	
@@ -892,24 +892,46 @@ Kommentatoren.</p>
 
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Cru$her');">Cru$her</a></td>
+			<td><a href="#border" onclick="showGames('SkunkyVillage');">SkunkyVillage</a></td>
+			<td>6</td>
 			<td>5</td>
-			<td>4</td>
 			<td>1</td>
-			<td>9</td>
-			<td>3</td>
-			<td>13</td>
+			<td>10</td>
+			<td>2</td>
+			<td>15</td>
 			
 		</tr>
 
 		<tr>
 			<td><a href="#border" onclick="showGames('KarlKoch');">KarlKoch</a></td>
+			<td>6</td>
 			<td>5</td>
-			<td>4</td>
 			<td>1</td>
-			<td>8</td>
+			<td>10</td>
 			<td>4</td>
-			<td>12</td>
+			<td>15</td>
+			
+		</tr>
+
+		<tr>
+			<td><a href="#border" onclick="showGames('Cru$her');">Cru$her</a></td>
+			<td>6</td>
+			<td>4</td>
+			<td>2</td>
+			<td>9</td>
+			<td>5</td>
+			<td>13</td>
+			
+		</tr>
+
+		<tr>
+			<td><a href="#border" onclick="showGames('Moppzilla');">Moppzilla</a></td>
+			<td>6</td>
+			<td>3</td>
+			<td>3</td>
+			<td>7</td>
+			<td>7</td>
+			<td>10</td>
 			
 		</tr>
 
@@ -925,34 +947,23 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Moppzilla');">Moppzilla</a></td>
-			<td>5</td>
-			<td>3</td>
-			<td>2</td>
-			<td>7</td>
-			<td>5</td>
-			<td>10</td>
-			
-		</tr>
-
-		<tr>
-			<td><a href="#border" onclick="showGames('JochenPeter');">JochenPeter</a></td>
+			<td><a href="#border" onclick="showGames('Jackle');">Jackle</a></td>
 			<td>4</td>
 			<td>3</td>
 			<td>1</td>
 			<td>6</td>
-			<td>3</td>
+			<td>2</td>
 			<td>9</td>
 			
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('SkunkyVillage');">SkunkyVillage</a></td>
-			<td>4</td>
+			<td><a href="#border" onclick="showGames('JochenPeter');">JochenPeter</a></td>
+			<td>5</td>
 			<td>3</td>
-			<td>1</td>
-			<td>6</td>
 			<td>2</td>
+			<td>6</td>
+			<td>5</td>
 			<td>9</td>
 			
 		</tr>
@@ -991,23 +1002,12 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Jackle');">Jackle</a></td>
-			<td>3</td>
-			<td>2</td>
-			<td>1</td>
-			<td>4</td>
-			<td>2</td>
-			<td>6</td>
-			
-		</tr>
-
-		<tr>
 			<td><a href="#border" onclick="showGames('Keyan_Farlander');">Keyan_Farlander</a></td>
-			<td>4</td>
+			<td>5</td>
 			<td>1</td>
-			<td>3</td>
 			<td>4</td>
-			<td>6</td>
+			<td>4</td>
+			<td>8</td>
 			<td>5</td>
 			
 		</tr>

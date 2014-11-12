@@ -124,11 +124,17 @@ function onPlayerReady(evt) {
 	player.playVideo();
 }
 
-var elements = document.querySelectorAll('table.competition>tbody>tr>td:nth-child(2)');
+var elementsM = document.querySelectorAll('table.competition>tbody>tr>td:nth-child(2)');
+var elementsR = document.querySelectorAll('table.competition>tbody>tr>td:first-child');
 document.getElementById('filter').addEventListener('input', function(evt){
 	filterInput(evt.target.value);
 }, false);
 function filterInput(str){
+	var elements = elementsM;
+	if(/^\d+$/.test(str)){
+		elements = elementsR;
+	}
+
 	var needle = str.toLowerCase();
 	for(var i=0; i<elements.length; ++i){
 		var ele = elements[i];

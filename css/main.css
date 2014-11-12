@@ -348,21 +348,24 @@ table.competition tbody td.score:hover {
   background-color: inherit;
   transition: background-color 2s; }
 
-table.visible td, td.visible {
+td.visible {
   background-color: inherit !important; }
-table.visible td a, td.visible a {
-  color: #2a7ae2 !important; }
 
-table#ranking tbody tr:nth-child(odd) {
+table#ranking.visible tbody tr:nth-child(odd) {
   background-color: white; }
-table#ranking tbody tr:nth-child(even) {
+table#ranking.visible tbody tr:nth-child(even) {
   background-color: #CCC; }
-table#ranking tbody tr:hover {
-  background-color: #EEE; }
-table#ranking tbody td {
-  color: black;
-  background-color: black; }
-table#ranking tbody td a {
+table#ranking.visible tbody tr:hover {
+  background-color: #EEE;
+  transition: background-color 0s; }
+
+table#ranking tbody tr {
+  background-color: black;
   color: black; }
-table#ranking td:first-child {
+table#ranking tbody tr a {
+  color: black; }
+table#ranking tbody tr:hover {
+  background-color: inherit;
+  transition: background-color 2s; }
+table#ranking tbody td:first-child {
   text-align: left; }
