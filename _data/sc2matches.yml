@@ -182,8 +182,8 @@
 
 - round: 5
   match: SkunkyVillage - Keyan_Farlander
-  score: 
-  video: 
+  score: 2 - 0
+  video: http://www.twitch.tv/crusher87/c/5452582
 
 - round: 5
   match: MegaSpucknapf - Cru$her
@@ -194,8 +194,8 @@
 
 - round: 5
   match: JochenPeter - Jackle
-  score: 
-  video: 
+  score: 0 - 2
+  video: http://www.twitch.tv/crusher87/c/5465558
 
 - round: 5
   match: Moppzilla - X-FaKtOr
@@ -206,8 +206,8 @@
 
 - round: 6
   match: KarlKoch - Moppzilla
-  score: 
-  video: 
+  score: 2 - 0
+  video: http://www.twitch.tv/skunkkk/b/587737143
 
 - round: 6
   match: X-FaKtOr - JochenPeter
@@ -221,8 +221,9 @@
 
 - round: 6
   match: Cru$her - SkunkyVillage
-  score: 
-  video: 
+  score: 0 - 2
+  video:
+    - https://www.youtube.com/watch?v=ohaqSlT_fA4
 
 - round: 6
   match: Keyan_Farlander - Buddel
