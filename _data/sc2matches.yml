@@ -138,8 +138,9 @@
 
 - round: 4
   match: X-FaKtOr - Nartsgul
-  score: 
-  video: 
+  score: 2 - 0
+  video:
+    - https://www.youtube.com/watch?v=VgfJNSB3ZAc
 
 - round: 4
   match: Jackle - Suizidfisch
@@ -211,8 +212,9 @@
 
 - round: 6
   match: X-FaKtOr - JochenPeter
-  score: 
-  video: 
+  score: 1 - 2
+  video:
+    - https://www.youtube.com/watch?v=Ld3m6B6JHJE
 
 - round: 6
   match: Jackle - MegaSpucknapf
