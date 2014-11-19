@@ -92,7 +92,7 @@
 
 - round: 3
   match: Jackle - Buddel
-  score: 
+  score: 2 - 0
   video: 
 
 - round: 3
@@ -239,8 +239,10 @@
 
 - round: 6
   match: seph` - Suizidfisch
-  score: 
-  video: 
+  score: 2 - 0
+  video:
+    - https://www.youtube.com/watch?v=QSWMofPsj4c
+    - https://www.youtube.com/watch?v=M_60nZxhs-o
 
 - round: 7
   match: KarlKoch - Nartsgul
@@ -249,13 +251,13 @@
 
 - round: 7
   match: Buddel - Suizidfisch
-  score: 
-  video: 
+  score: 1 - 2
+  video: http://www.twitch.tv/crusher87/c/5522209
 
 - round: 7
   match: SkunkyVillage - seph`
-  score: 
-  video: 
+  score: 1 - 2
+  video: http://www.twitch.tv/crusher87/c/5515757
 
 - round: 7
   match: MegaSpucknapf - Randbauer
@@ -269,8 +271,9 @@
 
 - round: 7
   match: Moppzilla - Cru$her
-  score: 
-  video: 
+  score: 0 - 2
+  video:
+    - https://www.youtube.com/watch?v=-6Qt8lchrFw
 
 - round: 7
   match: X-FaKtOr - Jackle
