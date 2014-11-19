@@ -61,13 +61,8 @@
     <div id="text">
 <p><img src="https://dl.dropboxusercontent.com/u/18678802/pub/sc2_hots_turnier.png" alt="Logo" title="Logo" /></p>
 
-<p>Dies ist nur ein sinnloser Platzhaltertext, weil mir nichts sinnvolles
-eingefallen ist und ich keine Lust hatte den Forumeintrag von Fersoltil zu
-kopieren. Wer es noch nicht wusste: Das ist bloß eine Testseite. Das
-interessante ist sowieso nicht mein Blabla, sondern die Spieleliste unten
-drunter.</p>
-
-<p>Also viel Spaß beim gucken und vielen Dank an die Organisatoren, Spieler und
+<p>Dies ist nur eine einfache Spieleliste mit Link zur jeweiligen Aufzeichnung des
+Spiels. Also viel Spaß beim gucken und vielen Dank an die Organisatoren, Spieler und
 Kommentatoren.</p>
 
 <p><a href="http://forum.mods.de/bb/thread.php?TID=213030">Thread</a></p>
@@ -245,7 +240,7 @@ Kommentatoren.</p>
 		<tr>
 			<td>3</td>
 			<td>Jackle - Buddel</td>
-			<td></td>
+			<td class="score">2 - 0</td>
 			<td></td>
 		</tr>
 
@@ -449,8 +444,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>6</td>
 			<td>seph` - Suizidfisch</td>
-			<td></td>
-			<td></td>
+			<td class="score">2 - 0</td>
+			<td><a href="#player" onclick="embedYTVideo(event,['QSWMofPsj4c', 'M_60nZxhs-o']);">Youtube</a></td>
 		</tr>
 
 	
@@ -469,16 +464,16 @@ Kommentatoren.</p>
 		<tr>
 			<td>7</td>
 			<td>Buddel - Suizidfisch</td>
-			<td></td>
-			<td></td>
+			<td class="score">1 - 2</td>
+			<td><a href="http://www.twitch.tv/crusher87/c/5522209" target="_blank" onclick="markVideo(event);">Twitch</a></td>
 		</tr>
 
 	
 		<tr>
 			<td>7</td>
 			<td>SkunkyVillage - seph`</td>
-			<td></td>
-			<td></td>
+			<td class="score">1 - 2</td>
+			<td><a href="http://www.twitch.tv/crusher87/c/5515757" target="_blank" onclick="markVideo(event);">Twitch</a></td>
 		</tr>
 
 	
@@ -501,8 +496,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>7</td>
 			<td>Moppzilla - Cru$her</td>
-			<td></td>
-			<td></td>
+			<td class="score">0 - 2</td>
+			<td><a href="#player" onclick="embedYTVideo(event,['-6Qt8lchrFw']);">Youtube</a></td>
 		</tr>
 
 	
@@ -893,12 +888,23 @@ Kommentatoren.</p>
 
 		<tr>
 			<td><a href="#border" onclick="showGames('SkunkyVillage');">SkunkyVillage</a></td>
-			<td>6</td>
+			<td>7</td>
 			<td>5</td>
-			<td>1</td>
-			<td>10</td>
 			<td>2</td>
-			<td>15</td>
+			<td>11</td>
+			<td>4</td>
+			<td>16</td>
+			
+		</tr>
+
+		<tr>
+			<td><a href="#border" onclick="showGames('Cru$her');">Cru$her</a></td>
+			<td>7</td>
+			<td>5</td>
+			<td>2</td>
+			<td>11</td>
+			<td>5</td>
+			<td>16</td>
 			
 		</tr>
 
@@ -914,13 +920,35 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Cru$her');">Cru$her</a></td>
+			<td><a href="#border" onclick="showGames('seph`');">seph`</a></td>
 			<td>6</td>
 			<td>4</td>
 			<td>2</td>
 			<td>9</td>
-			<td>5</td>
+			<td>6</td>
 			<td>13</td>
+			
+		</tr>
+
+		<tr>
+			<td><a href="#border" onclick="showGames('Suizidfisch');">Suizidfisch</a></td>
+			<td>7</td>
+			<td>4</td>
+			<td>3</td>
+			<td>9</td>
+			<td>7</td>
+			<td>13</td>
+			
+		</tr>
+
+		<tr>
+			<td><a href="#border" onclick="showGames('Jackle');">Jackle</a></td>
+			<td>5</td>
+			<td>4</td>
+			<td>1</td>
+			<td>8</td>
+			<td>2</td>
+			<td>12</td>
 			
 		</tr>
 
@@ -948,45 +976,12 @@ Kommentatoren.</p>
 
 		<tr>
 			<td><a href="#border" onclick="showGames('Moppzilla');">Moppzilla</a></td>
-			<td>6</td>
-			<td>3</td>
-			<td>3</td>
 			<td>7</td>
-			<td>7</td>
-			<td>10</td>
-			
-		</tr>
-
-		<tr>
-			<td><a href="#border" onclick="showGames('Suizidfisch');">Suizidfisch</a></td>
-			<td>5</td>
 			<td>3</td>
-			<td>2</td>
-			<td>7</td>
 			<td>4</td>
-			<td>10</td>
-			
-		</tr>
-
-		<tr>
-			<td><a href="#border" onclick="showGames('Jackle');">Jackle</a></td>
-			<td>4</td>
-			<td>3</td>
-			<td>1</td>
-			<td>6</td>
-			<td>2</td>
+			<td>7</td>
 			<td>9</td>
-			
-		</tr>
-
-		<tr>
-			<td><a href="#border" onclick="showGames('seph`');">seph`</a></td>
-			<td>4</td>
-			<td>2</td>
-			<td>2</td>
-			<td>5</td>
-			<td>5</td>
-			<td>7</td>
+			<td>10</td>
 			
 		</tr>
 
@@ -1002,6 +997,17 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
+			<td><a href="#border" onclick="showGames('Buddel');">Buddel</a></td>
+			<td>6</td>
+			<td>1</td>
+			<td>5</td>
+			<td>4</td>
+			<td>11</td>
+			<td>5</td>
+			
+		</tr>
+
+		<tr>
 			<td><a href="#border" onclick="showGames('Keyan_Farlander');">Keyan_Farlander</a></td>
 			<td>5</td>
 			<td>1</td>
@@ -1009,17 +1015,6 @@ Kommentatoren.</p>
 			<td>4</td>
 			<td>8</td>
 			<td>5</td>
-			
-		</tr>
-
-		<tr>
-			<td><a href="#border" onclick="showGames('Buddel');">Buddel</a></td>
-			<td>4</td>
-			<td>1</td>
-			<td>3</td>
-			<td>3</td>
-			<td>7</td>
-			<td>4</td>
 			
 		</tr>
 
