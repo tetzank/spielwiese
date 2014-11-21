@@ -13,9 +13,6 @@
 		margin-right: auto;
 	}
 	#player{
-		/*min-width: 650px;
-		min-height: 400px;
-		background-color: black;*/
 		float: right;
 	}
 	#tables{
@@ -24,31 +21,31 @@
 }
 
 .visited a{
-	color: purple;
+	color: $visited-color;
 }
 .watching{
-	background-color: lightgreen;
+	background-color: $watching-color;
 }
 
 table.competition, table#ranking{
 	text-align: center;
 
 	thead th{
-		border-bottom: 1px black solid;
+		border-bottom: 1px solid;
 	}
 }
 
 table.competition{
-	tbody:nth-child(even){
-		background-color: white;
-	}
-	tbody:nth-child(odd){
-		background-color: #CCC;
-	}
-
 	tbody{
+		&:nth-child(even){
+			background-color: $even-color;
+		}
+		&:nth-child(odd){
+			background-color: $odd-color;
+		}
+
 		tr:hover{
-			background-color: #EEE;
+			background-color: $hover-color;
 		}
 
 		td:nth-child(2){
@@ -56,48 +53,56 @@ table.competition{
 		}
 
 		td.score{
-			color: black;
-			background-color: black;
+			color: $hidden-color;
+			background-color: $hidden-color;
+			
+			&.visible, &:hover{
+				color: inherit !important;
+				background-color: inherit !important;
+			}
+			&:hover{
+				transition: background-color 2s, color 2s;
+			}
 		}
-		td.score:hover{
-			background-color: inherit;
-			transition: background-color 2s;
-		}
-	}
-}
-
-td.visible{
-	background-color: inherit !important;
-}
-
-table#ranking.visible tbody{
-	tr:nth-child(odd){
-		background-color: white;
-	}
-	tr:nth-child(even){
-		background-color: #CCC;
-	}
-	tr:hover{
-		background-color: #EEE;
-		transition: background-color 0s;
 	}
 }
 
 table#ranking{
 	tbody{
 		tr{
-			background-color: black;
-			color: black;
+			background-color: $hidden-color;
+			color: $hidden-color;
 
-			a{ color: black; }
-		}
-		tr:hover{
-			background-color: inherit;
-			transition: background-color 2s;
-		}
+			a{ color: $hidden-color; }
 
+			&:hover, &:hover a{
+				color: inherit !important;
+				background-color: inherit !important;
+				transition: background-color 2s, color 2s;
+			}
+
+		}
 		td:first-child{
 			text-align: left;
+		}
+	}
+	&.visible tbody{
+		tr{
+			color: inherit !important;
+
+			a{ color: inherit !important; }
+
+			&:nth-child(odd){
+				background-color: $even-color;
+
+			}
+			&:nth-child(even){
+				background-color: $odd-color;
+			}
+			&:hover{
+				background-color: $hover-color;
+				transition: background-color 0s;
+			}
 		}
 	}
 }

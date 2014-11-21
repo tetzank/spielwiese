@@ -21,6 +21,14 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+//colors
+$even-color:     white;
+$odd-color:      #CCC;
+$hover-color:    #EEE;
+$watching-color: lightgreen;
+$visited-color:  purple;
+$hidden-color:   black;
+
 $on-palm:          600px;
 $on-laptop:        800px;
 
