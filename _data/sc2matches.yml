@@ -59,7 +59,8 @@
 - round: 2
   match: Moppzilla - Randbauer
   score: 2 - 1
-  video: http://www.twitch.tv/skunkkk/b/578777309
+  video: dead
+#http://www.twitch.tv/skunkkk/b/578777309
 
 - round: 2
   match: X-FaKtOr - Keyan_Farlander
@@ -69,7 +70,8 @@
 - round: 2
   match: Jackle - Cru$her
   score: 0 - 2
-  video: http://www.twitch.tv/skunkkk/b/577496959
+  video: dead
+#http://www.twitch.tv/skunkkk/b/577496959
 
 - round: 3
   match: KarlKoch - JochenPeter
@@ -208,7 +210,9 @@
 - round: 6
   match: KarlKoch - Moppzilla
   score: 2 - 0
-  video: http://www.twitch.tv/skunkkk/b/587737143
+  video:
+    - https://www.youtube.com/watch?v=4gY03IMR1Lk
+#http://www.twitch.tv/skunkkk/b/587737143
 
 - round: 6
   match: X-FaKtOr - JochenPeter
