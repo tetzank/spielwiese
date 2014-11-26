@@ -232,20 +232,18 @@ document.getElementById('unhide_ranking2').addEventListener('click', function(ev
 var scrolling = false;
 var hr = document.getElementById('border');
 window.onscroll = function(evt){
-	if(ytplayer || twplayer){
-		if(scrolling){
-			if(border.getBoundingClientRect().top > 0){
-				playerdiv.className = "";
-				playerdiv.style.left = "0";
-				scrolling = false;
-			}
-		}else{
-			var rect = playerdiv.getBoundingClientRect();
-			if(rect.top < 0){
-				playerdiv.className = "fixed";
-				playerdiv.style.left = rect.left+"px";
-				scrolling = true;
-			}
+	if(scrolling){
+		if(hr.getBoundingClientRect().top > 0){
+			playerdiv.className = "";
+			playerdiv.style.left = "0";
+			scrolling = false;
+		}
+	}else{
+		var rect = playerdiv.getBoundingClientRect();
+		if(rect.top < 0){
+			playerdiv.className = "fixed";
+			playerdiv.style.left = (rect.left-640)+"px";
+			scrolling = true;
 		}
 	}
 }
