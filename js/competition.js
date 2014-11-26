@@ -77,12 +77,39 @@ function markVideo(event){
 }
 
 var playerdiv = document.getElementById('player');
-var ytiframe = null;
-var player = null;
+var ytplayerAPI = null;
+var swfobject = null;
+var ytplayer = null;
+var twplayer = null;
+function ytinit(url){
+	var ytiframe = document.createElement('iframe');
+	ytiframe.setAttribute('id', 'ytplayer');
+	ytiframe.setAttribute('type', 'text/html');
+	ytiframe.setAttribute('width', '640');
+	ytiframe.setAttribute('height', '390');
+	ytiframe.setAttribute('allowfullscreen', 'true');
+	ytiframe.setAttribute('src', url);
+
+	ytiframe.onload = function(){
+		ytplayer = new YT.Player('ytplayer', {
+		  events: {
+			'onReady': onPlayerReady,
+		  }
+		});
+	}
+	
+	playerdiv.appendChild(ytiframe);
+}
 function embedYTVideo(event, arr){
 	markVideo(event);
+	
+	if(twplayer){
+		twplayer.pauseVideo();
+		document.getElementById('twframe').removeChild(twplayer);
+		twplayer = null;
+	}
 
-	if(player == null){
+	if(ytplayer == null){
 		var url = 'https://www.youtube.com/embed/' + arr[0]
 				+ '?showinfo=0&amp;version=3&amp;enablejsapi=1&amp;playerapiid=ytplayer';
 		if(arr.length > 1){
@@ -91,38 +118,70 @@ function embedYTVideo(event, arr){
 				url += ',' + arr[i];
 			}
 		}
+		if(ytplayerAPI == null){
+			ytplayerAPI = document.createElement('script');
+			ytplayerAPI.setAttribute('src', 'https://www.youtube.com/player_api');
 
-		var playerAPI = document.createElement('script');
-		playerAPI.setAttribute('src', 'https://www.youtube.com/player_api');
-
-		playerAPI.onload = function(){
-			ytiframe = document.createElement('iframe');
-			ytiframe.setAttribute('id', 'ytplayer');
-			ytiframe.setAttribute('type', 'text/html');
-			ytiframe.setAttribute('width', '640');
-			ytiframe.setAttribute('height', '390');
-			ytiframe.setAttribute('allowfullscreen', 'true');
-			ytiframe.setAttribute('src', url);
-
-			ytiframe.onload = function(){
-				player = new YT.Player('ytplayer', {
-				  events: {
-					'onReady': onPlayerReady,
-				  }
-				});
-			}
-			
-			playerdiv.appendChild(ytiframe);
+			ytplayerAPI.onload = ytinit.bind(null, url);
+			playerdiv.appendChild(ytplayerAPI);
+		}else{
+			ytinit(url);
 		}
-		playerdiv.appendChild(playerAPI);
 	}else{
 		//player already loaded, just load videos
-		player.loadPlaylist(arr);
+		ytplayer.loadPlaylist(arr);
 	}
 }
 function onPlayerReady(evt) {
-	player.playVideo();
+	ytplayer.playVideo();
 }
+
+function twinit(vid){
+	window.onPlayerEvent = function (data) {
+		data.forEach(function(event) {
+			if (event.event == "playerInit") {
+				twplayer = document.getElementById('twplayer');
+				twplayer.loadVideo(vid);
+			}
+		});
+	}
+	swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twplayer", "640", "400", "11", null,
+		{
+			"eventsCallback":"onPlayerEvent",
+			"embed":1,
+			"auto_play":"true"
+		},{
+			"allowScriptAccess":"always",
+			"allowFullScreen":"true"
+		}//, null, twobj_ready
+	);
+}
+function embedTWVideo(event, vid){
+	markVideo(event);
+
+	if(ytplayer){
+		ytplayer.stopVideo();
+		// remove iframe, ytplayer is player object
+		playerdiv.removeChild(document.getElementById('ytplayer'));
+		ytplayer = null;
+	}
+
+	if(twplayer == null){
+		if(swfobject == null){
+			swfobject = document.createElement('script');
+			swfobject.setAttribute('src', '//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js');
+			
+			swfobject.onload = twinit.bind(null, vid);
+			playerdiv.appendChild(swfobject);
+		}else{
+			twinit(vid);
+		}
+	}else{
+		//load and play
+		twplayer.loadVideo(vid);
+	}
+}
+
 
 var elementsM = document.querySelectorAll('table.competition>tbody>tr>td:nth-child(2)');
 var elementsR = document.querySelectorAll('table.competition>tbody>tr>td:first-child');
@@ -173,7 +232,7 @@ document.getElementById('unhide_ranking2').addEventListener('click', function(ev
 var scrolling = false;
 var hr = document.getElementById('border');
 window.onscroll = function(evt){
-	if(ytiframe){
+	if(ytplayer || twplayer){
 		if(scrolling){
 			if(border.getBoundingClientRect().top > 0){
 				playerdiv.className = "";
