@@ -242,7 +242,11 @@ window.onscroll = function(evt){
 		var rect = playerdiv.getBoundingClientRect();
 		if(rect.top < 0){
 			playerdiv.className = "fixed";
-			playerdiv.style.left = (rect.left-640)+"px";
+			if(ytplayer || twplayer){
+				playerdiv.style.left = rect.left+"px";
+			}else{
+				playerdiv.style.left = (rect.left-640)+"px";
+			}
 			scrolling = true;
 		}
 	}
