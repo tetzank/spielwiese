@@ -71,7 +71,11 @@ Kommentatoren.</p>
 </div>
 
 <hr id="border"/>
-<div id="player"></div>
+<div id="player">
+	<div id="twframe">
+		<div id="twplayer"></div>
+	</div>
+</div>
 
 <div id="tables">
 <p>
@@ -189,7 +193,7 @@ Kommentatoren.</p>
 			<td>2</td>
 			<td>Moppzilla - Randbauer</td>
 			<td class="score">2 - 1</td>
-			<td><a href="http://www.twitch.tv/skunkkk/b/578777309" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td>dead</td>
 		</tr>
 
 	
@@ -205,7 +209,7 @@ Kommentatoren.</p>
 			<td>2</td>
 			<td>Jackle - Cru$her</td>
 			<td class="score">0 - 2</td>
-			<td><a href="http://www.twitch.tv/skunkkk/b/577496959" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td>dead</td>
 		</tr>
 
 	
@@ -217,7 +221,7 @@ Kommentatoren.</p>
 			<td>3</td>
 			<td>KarlKoch - JochenPeter</td>
 			<td class="score">0 - 2</td>
-			<td><a href="http://www.twitch.tv/crusher87/c/5334555" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td><a href="#player" onclick="embedTWVideo(event,'c5334555');">Twitch</a></td>
 		</tr>
 
 	
@@ -361,7 +365,7 @@ Kommentatoren.</p>
 			<td>5</td>
 			<td>SkunkyVillage - Keyan_Farlander</td>
 			<td class="score">2 - 0</td>
-			<td><a href="http://www.twitch.tv/crusher87/c/5452582" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td><a href="#player" onclick="embedTWVideo(event,'c5452582');">Twitch</a></td>
 		</tr>
 
 	
@@ -377,7 +381,7 @@ Kommentatoren.</p>
 			<td>5</td>
 			<td>JochenPeter - Jackle</td>
 			<td class="score">0 - 2</td>
-			<td><a href="http://www.twitch.tv/crusher87/c/5465558" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td><a href="#player" onclick="embedTWVideo(event,'c5465558');">Twitch</a></td>
 		</tr>
 
 	
@@ -397,7 +401,7 @@ Kommentatoren.</p>
 			<td>6</td>
 			<td>KarlKoch - Moppzilla</td>
 			<td class="score">2 - 0</td>
-			<td><a href="http://www.twitch.tv/skunkkk/b/587737143" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td><a href="#player" onclick="embedYTVideo(event,['4gY03IMR1Lk']);">Youtube</a></td>
 		</tr>
 
 	
@@ -412,7 +416,7 @@ Kommentatoren.</p>
 		<tr>
 			<td>6</td>
 			<td>Jackle - MegaSpucknapf</td>
-			<td></td>
+			<td class="score">2 - 0</td>
 			<td></td>
 		</tr>
 
@@ -436,7 +440,7 @@ Kommentatoren.</p>
 		<tr>
 			<td>6</td>
 			<td>Randbauer - Nartsgul</td>
-			<td></td>
+			<td class="score">2 - 0</td>
 			<td></td>
 		</tr>
 
@@ -465,7 +469,7 @@ Kommentatoren.</p>
 			<td>7</td>
 			<td>Buddel - Suizidfisch</td>
 			<td class="score">1 - 2</td>
-			<td><a href="http://www.twitch.tv/crusher87/c/5522209" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td><a href="#player" onclick="embedTWVideo(event,'c5522209');">Twitch</a></td>
 		</tr>
 
 	
@@ -473,14 +477,14 @@ Kommentatoren.</p>
 			<td>7</td>
 			<td>SkunkyVillage - seph`</td>
 			<td class="score">1 - 2</td>
-			<td><a href="http://www.twitch.tv/crusher87/c/5515757" target="_blank" onclick="markVideo(event);">Twitch</a></td>
+			<td><a href="#player" onclick="embedTWVideo(event,'c5515757');">Twitch</a></td>
 		</tr>
 
 	
 		<tr>
 			<td>7</td>
 			<td>MegaSpucknapf - Randbauer</td>
-			<td></td>
+			<td class="score">2 - 1</td>
 			<td></td>
 		</tr>
 
@@ -548,8 +552,8 @@ Kommentatoren.</p>
 		<tr>
 			<td>8</td>
 			<td>Randbauer - SkunkyVillage</td>
-			<td></td>
-			<td></td>
+			<td class="score">0 - 2</td>
+			<td><a href="#player" onclick="embedTWVideo(event,'c5566601');">Twitch</a></td>
 		</tr>
 
 	
@@ -888,12 +892,12 @@ Kommentatoren.</p>
 
 		<tr>
 			<td><a href="#border" onclick="showGames('SkunkyVillage');">SkunkyVillage</a></td>
-			<td>7</td>
-			<td>5</td>
+			<td>8</td>
+			<td>6</td>
 			<td>2</td>
-			<td>11</td>
+			<td>13</td>
 			<td>4</td>
-			<td>16</td>
+			<td>19</td>
 			
 		</tr>
 
@@ -915,6 +919,17 @@ Kommentatoren.</p>
 			<td>1</td>
 			<td>10</td>
 			<td>4</td>
+			<td>15</td>
+			
+		</tr>
+
+		<tr>
+			<td><a href="#border" onclick="showGames('Jackle');">Jackle</a></td>
+			<td>6</td>
+			<td>5</td>
+			<td>1</td>
+			<td>10</td>
+			<td>2</td>
 			<td>15</td>
 			
 		</tr>
@@ -942,17 +957,6 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Jackle');">Jackle</a></td>
-			<td>5</td>
-			<td>4</td>
-			<td>1</td>
-			<td>8</td>
-			<td>2</td>
-			<td>12</td>
-			
-		</tr>
-
-		<tr>
 			<td><a href="#border" onclick="showGames('JochenPeter');">JochenPeter</a></td>
 			<td>6</td>
 			<td>4</td>
@@ -964,13 +968,13 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('X-FaKtOr');">X-FaKtOr</a></td>
-			<td>6</td>
-			<td>3</td>
-			<td>3</td>
-			<td>7</td>
+			<td><a href="#border" onclick="showGames('Randbauer');">Randbauer</a></td>
 			<td>8</td>
-			<td>10</td>
+			<td>3</td>
+			<td>5</td>
+			<td>8</td>
+			<td>11</td>
+			<td>11</td>
 			
 		</tr>
 
@@ -986,13 +990,13 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Randbauer');">Randbauer</a></td>
-			<td>5</td>
-			<td>2</td>
+			<td><a href="#border" onclick="showGames('X-FaKtOr');">X-FaKtOr</a></td>
+			<td>6</td>
 			<td>3</td>
-			<td>5</td>
+			<td>3</td>
 			<td>7</td>
-			<td>7</td>
+			<td>8</td>
+			<td>10</td>
 			
 		</tr>
 
@@ -1019,18 +1023,18 @@ Kommentatoren.</p>
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('Nartsgul');">Nartsgul</a></td>
-			<td>4</td>
-			<td>0</td>
-			<td>4</td>
+			<td><a href="#border" onclick="showGames('MegaSpucknapf');">MegaSpucknapf</a></td>
+			<td>7</td>
 			<td>1</td>
-			<td>8</td>
-			<td>1</td>
+			<td>6</td>
+			<td>3</td>
+			<td>13</td>
+			<td>4</td>
 			
 		</tr>
 
 		<tr>
-			<td><a href="#border" onclick="showGames('MegaSpucknapf');">MegaSpucknapf</a></td>
+			<td><a href="#border" onclick="showGames('Nartsgul');">Nartsgul</a></td>
 			<td>5</td>
 			<td>0</td>
 			<td>5</td>
@@ -1062,6 +1066,59 @@ Kommentatoren.</p>
     </div>
 
     
+
+	
+<div id="customcontrols" style="position:fixed;top:10px;left:10px;z-index:1;">
+	<details>
+		<summary>customize style</summary>
+		<table>
+			<tr>
+				<td><label>text:</label></td>
+				<td><input type="color" id="textcolor" value="#111111" /></td>
+			</tr>
+			<tr>
+				<td><label>background:</label></td>
+				<td><input type="color" id="bgcolor" value="#fdfdfd" /></td>
+			</tr>
+			<tr>
+				<td><label>even:</label></td>
+				<td><input type="color" id="evencolor" value="#ffffff" /></td>
+			</tr>
+			<tr>
+				<td><label>odd:</label></td>
+				<td><input type="color" id="oddcolor" value="#cccccc" /></td>
+			</tr>
+			<tr>
+				<td><label>hover:</label></td>
+				<td><input type="color" id="hovercolor" value="#eeeeee" /></td>
+			</tr>
+			<tr>
+				<td><label>watching:</label></td>
+				<td><input type="color" id="watchingcolor" value="#90EE90" /></td>
+			</tr>
+			<tr>
+				<td><label>link:</label></td>
+				<td><input type="color" id="linkcolor" value="#2a7ae2" /></td>
+			</tr>
+			<tr>
+				<td><label>visited:</label></td>
+				<td><input type="color" id="visitedcolor" value="#800080" /></td>
+			</tr>
+			<tr>
+				<td><label>hidden:</label></td>
+				<td><input type="color" id="hiddencolor" value="#000000" /></td>
+			</tr>
+		</table>
+		<a href="" id="resetcolors">Zur&uuml;cksetzen</a>
+	</details>
+</div>
+
+<style id="customstyle" type="text/css"></style>
+
+<script type="application/ecmascript"
+	src="/spielwiese//js/customstyle.js"></script>
+
+
 
   </body>
 

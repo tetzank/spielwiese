@@ -315,9 +315,6 @@ pre > code {
     margin-right: auto; }
 
   #player {
-    /*min-width: 650px;
-    min-height: 400px;
-    background-color: black;*/
     float: right; }
 
   #tables {
@@ -331,7 +328,7 @@ pre > code {
 table.competition, table#ranking {
   text-align: center; }
 table.competition thead th, table#ranking thead th {
-  border-bottom: 1px black solid; }
+  border-bottom: 1px solid; }
 
 table.competition tbody:nth-child(even) {
   background-color: white; }
@@ -344,13 +341,27 @@ table.competition tbody td:nth-child(2) {
 table.competition tbody td.score {
   color: black;
   background-color: black; }
-table.competition tbody td.score:hover {
-  background-color: inherit;
-  transition: background-color 2s; }
-
-td.visible {
+table.competition tbody td.score.visible, table.competition tbody td.score:hover {
+  color: inherit !important;
   background-color: inherit !important; }
+table.competition tbody td.score:hover {
+  transition: background-color 2s, color 2s; }
 
+table#ranking td:first-child {
+  text-align: left; }
+table#ranking:not(.visible) tbody tr {
+  background-color: black;
+  color: black; }
+table#ranking:not(.visible) tbody tr a {
+  color: black; }
+table#ranking:not(.visible) tbody tr:hover, table#ranking:not(.visible) tbody tr:hover a {
+  color: inherit !important;
+  background-color: inherit !important;
+  transition: background-color 2s, color 2s; }
+table#ranking.visible tbody tr {
+  color: inherit !important; }
+table#ranking.visible tbody tr a {
+  color: inherit !important; }
 table#ranking.visible tbody tr:nth-child(odd) {
   background-color: white; }
 table#ranking.visible tbody tr:nth-child(even) {
@@ -358,14 +369,3 @@ table#ranking.visible tbody tr:nth-child(even) {
 table#ranking.visible tbody tr:hover {
   background-color: #EEE;
   transition: background-color 0s; }
-
-table#ranking tbody tr {
-  background-color: black;
-  color: black; }
-table#ranking tbody tr a {
-  color: black; }
-table#ranking tbody tr:hover {
-  background-color: inherit;
-  transition: background-color 2s; }
-table#ranking tbody td:first-child {
-  text-align: left; }
