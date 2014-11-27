@@ -17,9 +17,17 @@ module Jekyll
 					return "error: only youtube arrays supported for now"
 				end
 			else
-				if input.include? "twitch"
-					vid = 'c' + input[/twitch.tv\/\w+\/c\/(\d+)/,1]
-					return "<a href=\"#player\" onclick=\"embedTWVideo(event,'#{vid}');\">Twitch</a>"
+				if input.include? "youtube"
+					vid = "'#{input[/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
+					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vid}]);\">Youtube</a>"
+				elsif input.include? "twitch"
+					vid = input[/twitch.tv\/\w+\/c\/(\d+)/,1]
+					if vid.nil?
+						# e.g. twitch.tv/channel_name/b/id, 
+						return "<a href=\"#{input}\" target=\"_blank\" onclick=\"markVideo(event);\">Twitch/b/</a>"
+					else
+						return "<a href=\"#player\" onclick=\"embedTWVideo(event,'c#{vid}');\">Twitch</a>"
+					end
 				elsif input.include? "lpip"
 					return "see LPIP"
 				elsif input.include? "dead"

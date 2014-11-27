@@ -120,8 +120,7 @@
 - round: 4
   match: KarlKoch - MegaSpucknapf
   score: 2 - 0
-  video:
-    - https://www.youtube.com/watch?v=A04Ou1en5vI
+  video: https://www.youtube.com/watch?v=A04Ou1en5vI
 
 - round: 4
   match: JochenPeter - SkunkyVillage
@@ -141,8 +140,7 @@
 - round: 4
   match: X-FaKtOr - Nartsgul
   score: 2 - 0
-  video:
-    - https://www.youtube.com/watch?v=VgfJNSB3ZAc
+  video: https://www.youtube.com/watch?v=VgfJNSB3ZAc
 
 - round: 4
   match: Jackle - Suizidfisch
@@ -162,8 +160,7 @@
 - round: 4
   match: Keyan_Farlander - Randbauer
   score: 1 - 2
-  video:
-    - https://www.youtube.com/watch?v=iJmShAP80PE
+  video: https://www.youtube.com/watch?v=iJmShAP80PE
 
 - round: 5
   match: KarlKoch - Suizidfisch
@@ -210,15 +207,13 @@
 - round: 6
   match: KarlKoch - Moppzilla
   score: 2 - 0
-  video:
-    - https://www.youtube.com/watch?v=4gY03IMR1Lk
+  video: https://www.youtube.com/watch?v=4gY03IMR1Lk
 #http://www.twitch.tv/skunkkk/b/587737143
 
 - round: 6
   match: X-FaKtOr - JochenPeter
   score: 1 - 2
-  video:
-    - https://www.youtube.com/watch?v=Ld3m6B6JHJE
+  video: https://www.youtube.com/watch?v=Ld3m6B6JHJE
 
 - round: 6
   match: Jackle - MegaSpucknapf
@@ -228,8 +223,7 @@
 - round: 6
   match: Cru$her - SkunkyVillage
   score: 0 - 2
-  video:
-    - https://www.youtube.com/watch?v=ohaqSlT_fA4
+  video: https://www.youtube.com/watch?v=ohaqSlT_fA4
 
 - round: 6
   match: Keyan_Farlander - Buddel
@@ -250,7 +244,7 @@
 
 - round: 7
   match: KarlKoch - Nartsgul
-  score: 
+  score: 2 - 0
   video: 
 
 - round: 7
@@ -276,18 +270,17 @@
 - round: 7
   match: Moppzilla - Cru$her
   score: 0 - 2
-  video:
-    - https://www.youtube.com/watch?v=-6Qt8lchrFw
+  video: https://www.youtube.com/watch?v=-6Qt8lchrFw
 
 - round: 7
   match: X-FaKtOr - Jackle
-  score: 
-  video: 
+  score: 0 - 2
+  video: https://www.youtube.com/watch?v=_jwGH2s-zMY
 
 - round: 8
   match: KarlKoch - X-FaKtOr
-  score: 
-  video: 
+  score: 0 - 2
+  video: https://www.youtube.com/watch?v=SBFR0gGlzUQ
 
 - round: 8
   match: Jackle - Moppzilla
@@ -296,8 +289,8 @@
 
 - round: 8
   match: Cru$her - JochenPeter
-  score: 
-  video: 
+  score: 2 - 0
+  video: https://www.youtube.com/watch?v=97xPLbIZJFM
 
 - round: 8
   match: Keyan_Farlander - MegaSpucknapf
