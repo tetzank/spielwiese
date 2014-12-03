@@ -21,12 +21,18 @@ module Jekyll
 					vid = "'#{input[/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
 					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vid}]);\">Youtube</a>"
 				elsif input.include? "twitch"
-					vid = input[/twitch.tv\/\w+\/c\/(\d+)/,1]
-					if vid.nil?
-						# e.g. twitch.tv/channel_name/b/id, 
-						return "<a href=\"#{input}\" target=\"_blank\" onclick=\"markVideo(event);\">Twitch/b/</a>"
+					match = /twitch.tv\/\w+\/(c|b)\/(\d+)/.match(input)
+					if match.nil?
+						# something completely else
+						return "<a href=\"#{input}\" target=\"_blank\" onclick=\"markVideo(event);\">Twitch</a>"
 					else
-						return "<a href=\"#player\" onclick=\"embedTWVideo(event,'c#{vid}');\">Twitch</a>"
+						# b - broadcast has prefix a on video id
+						# c - highlight has prefix c
+						if match[1]=="b"
+							return "<a href=\"#player\" onclick=\"embedTWVideo(event,'a#{match[2]}');\">Twitch</a>"
+						else
+							return "<a href=\"#player\" onclick=\"embedTWVideo(event,'c#{match[2]}');\">Twitch</a>"
+						end
 					end
 				elsif input.include? "lpip"
 					return "see LPIP"
