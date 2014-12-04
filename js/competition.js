@@ -105,7 +105,9 @@ function embedYTVideo(event, arr){
 	
 	if(twplayer){
 		twplayer.pauseVideo();
-		document.getElementById('twframe').removeChild(twplayer);
+		var div = document.createElement('div');
+		div.setAttribute('id', 'twplayer');
+		document.getElementById('twframe').replaceChild(div, twplayer);
 		twplayer = null;
 	}
 
