@@ -4,15 +4,15 @@
     <title>Spielwiese</title>
     <description>Spielwiese
 </description>
-    <link>http://tetzank.github.io/spielwiese//</link>
-    <atom:link href="http://tetzank.github.io/spielwiese//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 03 Dec 2014 18:03:32 +0100</pubDate>
-    <lastBuildDate>Wed, 03 Dec 2014 18:03:32 +0100</lastBuildDate>
+    <link>http://tetzank.github.io/spielwiese/</link>
+    <atom:link href="http://tetzank.github.io/spielwiese/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 06 Dec 2014 15:24:00 +0100</pubDate>
+    <lastBuildDate>Sat, 06 Dec 2014 15:24:00 +0100</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
         <title>Starcraft 2 - 4. Turnier</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/18678802/pub/sc2_hots_turnier.png&quot; alt=&quot;Logo&quot; title=&quot;Logo&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/spielwiese/assets/sc2_4_turnier.png&quot; alt=&quot;Logo&quot; title=&quot;Logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dies ist nur eine einfache Spieleliste mit Link zur jeweiligen Aufzeichnung des
 Spiels. Also viel Spaß beim gucken und vielen Dank an die Organisatoren, Spieler und
@@ -22,8 +22,8 @@ Kommentatoren.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 27 Oct 2014 00:00:00 +0100</pubDate>
-        <link>http://tetzank.github.io/spielwiese//2014/10/27/sc2-4-Turnier.html</link>
-        <guid isPermaLink="true">http://tetzank.github.io/spielwiese//2014/10/27/sc2-4-Turnier.html</guid>
+        <link>http://tetzank.github.io/spielwiese/2014/10/27/sc2-4-Turnier.html</link>
+        <guid isPermaLink="true">http://tetzank.github.io/spielwiese/2014/10/27/sc2-4-Turnier.html</guid>
         
         
       </item>

@@ -81,6 +81,8 @@ var ytplayerAPI = null;
 var swfobject = null;
 var ytplayer = null;
 var twplayer = null;
+var twcontrols = null;
+var twvids, twidx;
 function ytinit(url){
 	var ytiframe = document.createElement('iframe');
 	ytiframe.setAttribute('id', 'ytplayer');
@@ -105,8 +107,15 @@ function embedYTVideo(event, arr){
 	
 	if(twplayer){
 		twplayer.pauseVideo();
-		document.getElementById('twframe').removeChild(twplayer);
+		var div = document.createElement('div');
+		div.setAttribute('id', 'twplayer');
+		document.getElementById('twframe').replaceChild(div, twplayer);
 		twplayer = null;
+		twvids = null;
+		if(twcontrols){
+			document.getElementById('twframe').removeChild(twcontrols);
+			twcontrols = null;
+		}
 	}
 
 	if(ytplayer == null){
@@ -139,6 +148,14 @@ function onPlayerReady(evt) {
 function twinit(vid){
 	window.onPlayerEvent = function (data) {
 		data.forEach(function(event) {
+			// events coming:
+			// playerInit, videoLoading, videoLoaded, videoPlaying
+			// pausing in flash - nothing
+			// also nothing when finished :(
+			// TODO: one could abuse twplayer.getVideoTime() with polling
+			// needs length of video, ajax not allowed (cross-site)
+			// only with official js-api-sdk, which needs client id, ...
+			// -> just simple buttons probably best for now
 			if (event.event == "playerInit") {
 				twplayer = document.getElementById('twplayer');
 				twplayer.loadVideo(vid);
@@ -156,8 +173,35 @@ function twinit(vid){
 		}//, null, twobj_ready
 	);
 }
-function embedTWVideo(event, vid){
+function embedTWVideo(event, arr){
 	markVideo(event);
+
+	if(arr.length > 1){
+		twvids = arr;
+		twidx = arr.length * 100; //HACK: so we don't get negative, in practice
+		twcontrols = document.createElement('p');
+		var btn_prev = document.createElement('button');
+		btn_prev.setAttribute('type', 'button');
+		btn_prev.innerHTML = "Previous";
+		btn_prev.addEventListener('click', function(evt){
+			twplayer.loadVideo(twvids[--twidx % twvids.length]);
+		}, false);
+		twcontrols.appendChild(btn_prev);
+		var btn_next = document.createElement('button');
+		btn_next.setAttribute('type', 'button');
+		btn_next.innerHTML = "Next";
+		btn_next.addEventListener('click', function(evt){
+			twplayer.loadVideo(twvids[++twidx % twvids.length]);
+		}, false);
+		twcontrols.appendChild(btn_next);
+		document.getElementById('twframe').appendChild(twcontrols);
+	}else{
+		twvids = null;
+		if(twcontrols){
+			document.getElementById('twframe').removeChild(twcontrols);
+			twcontrols = null;
+		}
+	}
 
 	if(ytplayer){
 		ytplayer.stopVideo();
@@ -171,14 +215,14 @@ function embedTWVideo(event, vid){
 			swfobject = document.createElement('script');
 			swfobject.setAttribute('src', '//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js');
 			
-			swfobject.onload = twinit.bind(null, vid);
+			swfobject.onload = twinit.bind(null, arr[0]);
 			playerdiv.appendChild(swfobject);
 		}else{
-			twinit(vid);
+			twinit(arr[0]);
 		}
 	}else{
 		//load and play
-		twplayer.loadVideo(vid);
+		twplayer.loadVideo(arr[0]);
 	}
 }
 
