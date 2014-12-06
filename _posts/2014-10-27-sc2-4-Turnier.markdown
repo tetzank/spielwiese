@@ -7,7 +7,7 @@ matchPoints: 1
 mapPoints: 1
 ---
 
-![Logo](https://dl.dropboxusercontent.com/u/18678802/pub/sc2_hots_turnier.png "Logo")
+![Logo]({{site.baseurl}}/assets/sc2_4_turnier.png "Logo")
 
 Dies ist nur eine einfache Spieleliste mit Link zur jeweiligen Aufzeichnung des
 Spiels. Also viel Spaß beim gucken und vielen Dank an die Organisatoren, Spieler und
