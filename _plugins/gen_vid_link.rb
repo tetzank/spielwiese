@@ -3,35 +3,38 @@
 module Jekyll
 	module GenVidLinkFilter
 		def gen_vid_link(input)
+			ytregex = /youtube.com\/watch\?v=([\w-]+)/
+			twregex = /twitch.tv\/\w+\/(c|b)\/(\d+)/
+
 			if input.is_a? Array
-				vid = ""
 				if input[0].include? "youtube"
-					vid = "'#{input[0][/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
-					for v in input[1..-1]
-						if v.include? "youtube"
-							vid += ", '#{v[/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
-						end
-					end
-					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vid}]);\">Youtube</a>"
+					vids = input.collect {|i| "'#{i[ytregex,1]}'" }.join(",")
+					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vids}]);\">Youtube</a>"
+				elsif input[0].include? "twitch"
+					vids = input.collect {|i|
+						m = twregex.match(i)
+						m[1]=="b"? "'a#{m[2]}'": "'c#{m[2]}'"
+					}.join(",")
+					return "<a href=\"#player\" onclick=\"embedTWVideo(event,[#{vids}]);\">Twitch</a>"
 				else
-					return "error: only youtube arrays supported for now"
+					raise "only youtube and twitch arrays supported for now"
 				end
 			else
 				if input.include? "youtube"
-					vid = "'#{input[/youtube.com\/watch\?v=([\w\-]+)/,1]}'"
+					vid = "'#{input[ytregex,1]}'"
 					return "<a href=\"\#player\" onclick=\"embedYTVideo(event,[#{vid}]);\">Youtube</a>"
 				elsif input.include? "twitch"
-					match = /twitch.tv\/\w+\/(c|b)\/(\d+)/.match(input)
-					if match.nil?
+					m = twregex.match(input)
+					if m.nil?
 						# something completely else
-						return "<a href=\"#{input}\" target=\"_blank\" onclick=\"markVideo(event);\">Twitch</a>"
+						raise "unsupported twitch link: "+ input
 					else
 						# b - broadcast has prefix a on video id
 						# c - highlight has prefix c
-						if match[1]=="b"
-							return "<a href=\"#player\" onclick=\"embedTWVideo(event,'a#{match[2]}');\">Twitch</a>"
+						if m[1]=="b"
+							return "<a href=\"#player\"	onclick=\"embedTWVideo(event,['a#{m[2]}']);\">Twitch/b/</a>"
 						else
-							return "<a href=\"#player\" onclick=\"embedTWVideo(event,'c#{match[2]}');\">Twitch</a>"
+							return "<a href=\"#player\" onclick=\"embedTWVideo(event,['c#{m[2]}']);\">Twitch</a>"
 						end
 					end
 				elsif input.include? "lpip"

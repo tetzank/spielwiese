@@ -172,8 +172,8 @@
 
 - round: 5
   match: Nartsgul - seph`
-  score: 
-  video: 
+  score: 0 - 2
+  video: http://www.twitch.tv/crusher87/c/5617510
 
 - round: 5
   match: Buddel - Randbauer
@@ -324,8 +324,10 @@
 
 - round: 9
   match: JochenPeter - Nartsgul
-  score: 
-  video: 
+  score: 2 - 0
+  video:
+    - http://www.twitch.tv/crusher87/c/5611321
+    - http://www.twitch.tv/crusher87/c/5611325
 
 - round: 9
   match: Moppzilla - Suizidfisch
