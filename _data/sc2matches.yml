@@ -208,7 +208,6 @@
   match: KarlKoch - Moppzilla
   score: 2 - 0
   video: https://www.youtube.com/watch?v=4gY03IMR1Lk
-#http://www.twitch.tv/skunkkk/b/587737143
 
 - round: 6
   match: X-FaKtOr - JochenPeter
@@ -332,7 +331,7 @@
 - round: 9
   match: Moppzilla - Suizidfisch
   score: 0 - 2
-  video: http://www.twitch.tv/skunkkk/b/594985814
+  video: https://www.youtube.com/watch?v=sTiYzRznYy8
 
 - round: 9
   match: X-FaKtOr - seph`
@@ -351,8 +350,8 @@
 
 - round: 10
   match: KarlKoch - Cru$her
-  score: 
-  video: 
+  score: 2 - 0
+  video: http://www.twitch.tv/crusher87/c/5662970
 
 - round: 10
   match: Keyan_Farlander - Jackle
@@ -361,8 +360,10 @@
 
 - round: 10
   match: Randbauer - X-FaKtOr
-  score: 
-  video: 
+  score: 0 - 2
+  video:
+    - http://www.twitch.tv/suizidfisch/b/597808506
+    - http://www.twitch.tv/suizidfisch/b/597815748
 
 - round: 10
   match: seph` - Moppzilla
@@ -371,8 +372,8 @@
 
 - round: 10
   match: Suizidfisch - JochenPeter
-  score: 
-  video: 
+  score: 0 - 2
+  video: http://www.twitch.tv/crusher87/c/5656589
 
 - round: 10
   match: Nartsgul - MegaSpucknapf
