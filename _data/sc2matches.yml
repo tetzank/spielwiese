@@ -345,8 +345,8 @@
 
 - round: 9
   match: Cru$her - Keyan_Farlander
-  score: 
-  video: 
+  score: 1 - 2
+  video: http://www.twitch.tv/crusher87/c/5727732
 
 - round: 10
   match: KarlKoch - Cru$her
@@ -362,8 +362,8 @@
   match: Randbauer - X-FaKtOr
   score: 0 - 2
   video:
-    - http://www.twitch.tv/suizidfisch/b/597808506
-    - http://www.twitch.tv/suizidfisch/b/597815748
+    - https://www.youtube.com/watch?v=3CgGkS33SDk
+    - https://www.youtube.com/watch?v=E6hrK860BgY
 
 - round: 10
   match: seph` - Moppzilla
@@ -397,8 +397,8 @@
 
 - round: 11
   match: Suizidfisch - Cru$her
-  score: 
-  video: 
+  score: 2 - 1
+  video: http://www.twitch.tv/crusher87/c/5726933
 
 - round: 11
   match: Nartsgul - Jackle
@@ -412,8 +412,8 @@
 
 - round: 11
   match: SkunkyVillage - Moppzilla
-  score: 
-  video: 
+  score: 2 - 0
+  video: http://www.twitch.tv/crusher87/c/5727719
 
 - round: 11
   match: MegaSpucknapf - JochenPeter
