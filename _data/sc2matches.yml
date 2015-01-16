@@ -263,8 +263,10 @@
 
 - round: 7
   match: JochenPeter - Keyan_Farlander
-  score: 
-  video: 
+  score: 2 - 0
+  video:
+    - https://www.youtube.com/watch?v=ZtlqaIW6slU
+    - https://www.youtube.com/watch?v=UYw4GbnqTUs
 
 - round: 7
   match: Moppzilla - Cru$her
@@ -451,8 +453,8 @@
 
 - round: 12
   match: Suizidfisch - SkunkyVillage
-  score: 
-  video: 
+  score: 2 - 0
+  video: https://www.youtube.com/watch?v=YW4DgSr4GCs
 
 - round: 12
   match: Nartsgul - Buddel
