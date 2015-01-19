@@ -41,6 +41,8 @@ module Jekyll
 					return "see LPIP"
 				elsif input.include? "dead"
 					return "dead"
+				elsif input.include? "default"
+					return "<span title=\"Das Spiel wurde nicht ausgetragen, weil ein Spieler nicht zur rechten Zeit antrat oder schon im Vorfeld der Partie aufgab.\">default</span>"
 				end
 			end
 		end

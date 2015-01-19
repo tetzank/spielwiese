@@ -369,8 +369,8 @@
 
 - round: 10
   match: seph` - Moppzilla
-  score: 
-  video: 
+  score: 0 - 2
+  video: default
 
 - round: 10
   match: Suizidfisch - JochenPeter
@@ -384,8 +384,8 @@
 
 - round: 10
   match: Buddel - SkunkyVillage
-  score: 
-  video: 
+  score: 2 - 0
+  video: default
 
 - round: 11
   match: KarlKoch - Randbauer
@@ -404,7 +404,7 @@
 
 - round: 11
   match: Nartsgul - Jackle
-  score: 
+  score: 0 - 2
   video: 
 
 - round: 11
@@ -438,8 +438,10 @@
 
 - round: 12
   match: Keyan_Farlander - Moppzilla
-  score: 
-  video: 
+  score: 0 - 2
+  video:
+    - https://www.youtube.com/watch?v=duqfqBBWGd0
+    - https://www.youtube.com/watch?v=Ikxrnd0zLSI
 
 - round: 12
   match: Randbauer - JochenPeter
@@ -473,8 +475,8 @@
 
 - round: 13
   match: seph` - Jackle
-  score: 
-  video: 
+  score: 0 - 2
+  video: https://www.youtube.com/watch?v=hy0MnZvMUYw
 
 - round: 13
   match: Suizidfisch - X-FaKtOr
@@ -493,6 +495,6 @@
 
 - round: 13
   match: SkunkyVillage - MegaSpucknapf
-  score: 
-  video: 
+  score: 0 - 2
+  video: default
 
