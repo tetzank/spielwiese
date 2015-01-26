@@ -4,7 +4,7 @@ module Jekyll
 	module GenRankingFilter
 		Entry = Struct.new(:played, :wins, :losses, :for, :against, :points)
 
-		def gen_ranking(input, matchPoints=3, mapPoints=0)
+		def gen_ranking(input, matchPoints=3, mapPoints=0, ignoreDiff=false)
 			ranking = Hash.new
 			ranking.default = nil
 			for m in input
@@ -38,7 +38,42 @@ module Jekyll
 			end
 			ranking = ranking.sort { |a,b|
 				if a[1].points == b[1].points
-					(b[1].for - b[1].against) <=> (a[1].for - a[1].against)
+					#(b[1].for - b[1].against) <=> (a[1].for - a[1].against)
+					bdiff = b[1].for - b[1].against
+					adiff = a[1].for - a[1].against
+					if bdiff == adiff or ignoreDiff
+						# direct comparison, who won the game between them
+						#FIXME: only when played once, not twice
+						# it's just a list - linear search
+						arr = [a[0], b[0]].sort
+						# select removes games without score
+						for m in input.select{ |i| !i['score'].nil? }
+							marr = m['match'].split(' - ').sort
+							if marr[0] == arr[0] and marr[1] == arr[1]
+								# found game
+								score = m['score'].split(' - ')
+								if score[0] > score[1]
+									winner = m['match'].split(' - ')[0]
+								else
+									winner = m['match'].split(' - ')[1]
+								end
+								if a[0] == winner
+									res = -1
+								else
+									res = 1
+								end
+								break
+							end
+						end
+						if res.nil?
+							#not found - can't decide
+							0
+						else
+							res
+						end
+					else
+						bdiff <=> adiff
+					end
 				else
 					b[1].points <=> a[1].points
 				end

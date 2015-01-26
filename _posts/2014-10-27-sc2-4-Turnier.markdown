@@ -5,6 +5,7 @@ title: Starcraft 2 - 4. Turnier
 matchdata: sc2matches
 matchPoints: 1
 mapPoints: 1
+ignoreDiff: true
 ---
 
 ![Logo]({{site.baseurl}}/assets/sc2_4_turnier.png "Logo")
@@ -12,6 +13,9 @@ mapPoints: 1
 Dies ist nur eine einfache Spieleliste mit Link zur jeweiligen Aufzeichnung des
 Spiels. Also viel Spaß beim gucken und vielen Dank an die Organisatoren, Spieler und
 Kommentatoren.
+
+Das Turnier ist zu Ende. Spiele ohne eingetragene Ergebnisse wurden nicht
+ausgetragen. Sie wurden als punktlos gewertet.
 
 [Thread](http://forum.mods.de/bb/thread.php?TID=213030)
 

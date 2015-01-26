@@ -59,7 +59,7 @@ layout: post
 		</tr>
 	</thead>
 	<tbody>
-{% assign ranking = site.data[page.matchdata] | gen_ranking matchPoints:page.matchPoints mapPoints:page.mapPoints %}
+{% assign ranking = site.data[page.matchdata] | gen_ranking matchPoints:page.matchPoints mapPoints:page.mapPoints ignoreDiff:page.ignoreDiff %}
 {% for row in ranking %}
 		<tr>
 			<td><a href="#border" onclick="showGames('{{row[0]}}');">{{row[0]}}</a></td>
